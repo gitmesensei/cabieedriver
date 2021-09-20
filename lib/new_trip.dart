@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
+import 'package:cabieedriver/global_variables.dart';
 import 'package:cabieedriver/size_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -172,10 +173,10 @@ class _NewTripState extends State<NewTrip> with SingleTickerProviderStateMixin {
     getMarker();
     if (Platform.isAndroid) {
       // Android-specific code
-      kGoogleApiKey = "AIzaSyC9pqyp5r_m4cHbQIGKJjDXY5NG6lwP9Zg";
+      kGoogleApiKey = Global.kAndroidGoogleApiKey;
     } else if (Platform.isIOS) {
       // iOS-specific code
-      kGoogleApiKey = "AIzaSyD5qX2Kc9s5ggtsRjoKRKeu6YO8s4zd0PQ";
+      kGoogleApiKey = Global.kIOSGoogleApiKey;
     }
     _animationController = AnimationController(
         duration: Duration(milliseconds: 1500), vsync: this);
